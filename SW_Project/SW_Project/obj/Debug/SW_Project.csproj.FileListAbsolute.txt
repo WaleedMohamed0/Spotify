@@ -1,0 +1,16 @@
+C:\Users\Waleed\source\repos\SW_Project\SW_Project\bin\Debug\SW_Project.exe.config
+C:\Users\Waleed\source\repos\SW_Project\SW_Project\bin\Debug\SW_Project.exe
+C:\Users\Waleed\source\repos\SW_Project\SW_Project\bin\Debug\SW_Project.pdb
+C:\Users\Waleed\source\repos\SW_Project\SW_Project\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Waleed\source\repos\SW_Project\SW_Project\obj\Debug\SW_Project.csproj.AssemblyReference.cache
+C:\Users\Waleed\source\repos\SW_Project\SW_Project\obj\Debug\SW_Project.csproj.SuggestedBindingRedirects.cache
+C:\Users\Waleed\source\repos\SW_Project\SW_Project\obj\Debug\SW_Project.Properties.Resources.resources
+C:\Users\Waleed\source\repos\SW_Project\SW_Project\obj\Debug\SW_Project.csproj.GenerateResource.cache
+C:\Users\Waleed\source\repos\SW_Project\SW_Project\obj\Debug\SW_Project.csproj.CoreCompileInputs.cache
+C:\Users\Waleed\source\repos\SW_Project\SW_Project\obj\Debug\SW_Project.csproj.CopyComplete
+C:\Users\Waleed\source\repos\SW_Project\SW_Project\obj\Debug\SW_Project.exe
+C:\Users\Waleed\source\repos\SW_Project\SW_Project\obj\Debug\SW_Project.pdb
+C:\Users\Waleed\source\repos\SW_Project\SW_Project\obj\Debug\SW_Project.LoginForm.resources
+C:\Users\Waleed\source\repos\SW_Project\SW_Project\obj\Debug\SW_Project.RegisterForm.resources
+C:\Users\Waleed\source\repos\SW_Project\SW_Project\obj\Debug\SW_Project.mainMenuForm.resources
+C:\Users\Waleed\source\repos\SW_Project\SW_Project\obj\Debug\SW_Project.HomeForm.resources
