@@ -67,5 +67,13 @@ namespace SW_Project
             mainMenuForm.ShowDialog();
             this.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            RegisterForm registerForm = new RegisterForm();
+            this.Hide();
+            registerForm.ShowDialog();
+            this.Close();
+        }
     }
 }
