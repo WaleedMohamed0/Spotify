@@ -45,7 +45,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(83, 113);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 32);
+            this.label1.Size = new System.Drawing.Size(153, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Username";
             // 
@@ -55,7 +55,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(83, 202);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 32);
+            this.label2.Size = new System.Drawing.Size(147, 32);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
@@ -65,6 +65,7 @@
             this.userName_txtBox.Name = "userName_txtBox";
             this.userName_txtBox.Size = new System.Drawing.Size(245, 22);
             this.userName_txtBox.TabIndex = 2;
+            this.userName_txtBox.Text = "mazenbakr";
             this.userName_txtBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Password_txtBox
@@ -73,6 +74,7 @@
             this.Password_txtBox.Name = "Password_txtBox";
             this.Password_txtBox.Size = new System.Drawing.Size(245, 22);
             this.Password_txtBox.TabIndex = 3;
+            this.Password_txtBox.Text = "1234";
             // 
             // button1
             // 

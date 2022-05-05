@@ -30,19 +30,28 @@ namespace SW_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OracleCommand cmd = new OracleCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = "select max(userid) from SpotifyUser";
-            int maxId = Convert.ToInt32(cmd.ExecuteScalar()) + 1;
-            cmd.CommandText = "insert into SpotifyUser values (:id , :FirstName , :LastName , :UserName , :Password)";
-            cmd.Parameters.Add("id", maxId);
-            cmd.Parameters.Add("FirstName", FirstName_txtBox.Text);
-            cmd.Parameters.Add("LastName",  LastName_txtBox.Text);
-            cmd.Parameters.Add("UserName",  userName_txtBox.Text);
-            cmd.Parameters.Add("Password",  password_txtBox.Text);
-            int r = cmd.ExecuteNonQuery();
+            OracleCommand usercmd = new OracleCommand();
+            OracleCommand libcmd = new OracleCommand();
+
+            usercmd.Connection = conn;
+            libcmd.Connection = conn;
+            usercmd.CommandText = "select max(userid) from SpotifyUser";
+            int maxId = Convert.ToInt32(usercmd.ExecuteScalar()) + 1;
+            usercmd.CommandText = "insert into SpotifyUser values (:id , :FirstName , :LastName , :UserName , :Password)";
+            usercmd.Parameters.Add("id", maxId);
+            usercmd.Parameters.Add("FirstName", FirstName_txtBox.Text);
+            usercmd.Parameters.Add("LastName",  LastName_txtBox.Text);
+            usercmd.Parameters.Add("UserName",  userName_txtBox.Text);
+            usercmd.Parameters.Add("Password",  password_txtBox.Text);
+            int r = usercmd.ExecuteNonQuery();
             if (r != -1)
             {
+                libcmd.CommandText = "select max(lib_id) from userlibrary";
+                int libmax = Convert.ToInt32(libcmd.ExecuteScalar()) + 1;
+                libcmd.CommandText = "insert into  userlibrary values (:id , :uesrid)";
+                libcmd.Parameters.Add("id", libmax);
+                libcmd.Parameters.Add("userid", maxId);
+                libcmd.ExecuteNonQuery();
                 MessageBox.Show("Registeration Succeeded");
             }
             else

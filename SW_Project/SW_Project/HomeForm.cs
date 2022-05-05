@@ -60,11 +60,10 @@ namespace SW_Project
 
         private void Library_Btn_Click(object sender, EventArgs e)
         {
-            string cmdstr = "select * from userlibrary";
-            adapter = new OracleDataAdapter(cmdstr, constr);
-            ds = new DataSet();
-            adapter.Fill(ds);
-            dataGridView1.DataSource = ds.Tables[0];
+            LibraryForm libraryForm = new LibraryForm();
+            this.Hide();
+            libraryForm.ShowDialog();
+            this.Close();
         }
 
         private void Playlist_Btn_Click(object sender, EventArgs e)
@@ -100,6 +99,12 @@ namespace SW_Project
             this.Hide();
             loginForm.ShowDialog();
             this.Close();
+        }
+
+        private void profile_Click(object sender, EventArgs e)
+        {
+            ProfileForm profileForm = new ProfileForm();
+            profileForm.ShowDialog();
         }
     }
 }

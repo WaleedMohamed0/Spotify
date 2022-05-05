@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LikedPlaylist_Btn = new System.Windows.Forms.Button();
             this.LikedSongs_Btn = new System.Windows.Forms.Button();
             this.LikedAlbums_Btn = new System.Windows.Forms.Button();
             this.Playlist_Btn = new System.Windows.Forms.Button();
@@ -39,9 +40,9 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.LikedPlaylist_Btn = new System.Windows.Forms.Button();
             this.Spotify = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.profile = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +50,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.profile);
             this.panel1.Controls.Add(this.LikedPlaylist_Btn);
             this.panel1.Controls.Add(this.LikedSongs_Btn);
             this.panel1.Controls.Add(this.LikedAlbums_Btn);
@@ -62,6 +64,18 @@
             this.panel1.Size = new System.Drawing.Size(256, 732);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // LikedPlaylist_Btn
+            // 
+            this.LikedPlaylist_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LikedPlaylist_Btn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LikedPlaylist_Btn.Location = new System.Drawing.Point(25, 669);
+            this.LikedPlaylist_Btn.Name = "LikedPlaylist_Btn";
+            this.LikedPlaylist_Btn.Size = new System.Drawing.Size(195, 39);
+            this.LikedPlaylist_Btn.TabIndex = 9;
+            this.LikedPlaylist_Btn.Text = "LikedPlaylist";
+            this.LikedPlaylist_Btn.UseVisualStyleBackColor = true;
+            this.LikedPlaylist_Btn.Click += new System.EventHandler(this.LikedPlaylist_Btn_Click);
             // 
             // LikedSongs_Btn
             // 
@@ -161,18 +175,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(733, 147);
             this.dataGridView1.TabIndex = 2;
             // 
-            // LikedPlaylist_Btn
-            // 
-            this.LikedPlaylist_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LikedPlaylist_Btn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LikedPlaylist_Btn.Location = new System.Drawing.Point(25, 669);
-            this.LikedPlaylist_Btn.Name = "LikedPlaylist_Btn";
-            this.LikedPlaylist_Btn.Size = new System.Drawing.Size(195, 39);
-            this.LikedPlaylist_Btn.TabIndex = 9;
-            this.LikedPlaylist_Btn.Text = "LikedPlaylist";
-            this.LikedPlaylist_Btn.UseVisualStyleBackColor = true;
-            this.LikedPlaylist_Btn.Click += new System.EventHandler(this.LikedPlaylist_Btn_Click);
-            // 
             // Spotify
             // 
             this.Spotify.AutoSize = true;
@@ -197,6 +199,17 @@
             this.button1.Text = "Logout";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // profile
+            // 
+            this.profile.BackColor = System.Drawing.Color.Lavender;
+            this.profile.Location = new System.Drawing.Point(15, 167);
+            this.profile.Name = "profile";
+            this.profile.Size = new System.Drawing.Size(91, 33);
+            this.profile.TabIndex = 10;
+            this.profile.Text = "profile";
+            this.profile.UseVisualStyleBackColor = false;
+            this.profile.Click += new System.EventHandler(this.profile_Click);
             // 
             // HomeForm
             // 
@@ -234,5 +247,6 @@
         private System.Windows.Forms.Button LikedPlaylist_Btn;
         private System.Windows.Forms.Label Spotify;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button profile;
     }
 }

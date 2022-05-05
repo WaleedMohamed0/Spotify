@@ -43,10 +43,12 @@ namespace SW_Project
             cmd.Parameters.Add("password", Password_txtBox.Text);
             OracleDataReader dr = cmd.ExecuteReader();
 
+          
             if(dr.Read() &&
                 userName_txtBox.Text == dr[3].ToString() && Password_txtBox.Text == dr[4].ToString())
             {
-                  MessageBox.Show("Login Successfully");
+                MessageBox.Show("Login Successfully");
+                LoggedUser.ODR = dr;
                 HomeForm homeForm = new HomeForm();
                 this.Hide();
                 homeForm.ShowDialog();
