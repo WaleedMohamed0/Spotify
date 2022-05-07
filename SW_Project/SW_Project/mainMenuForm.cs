@@ -12,6 +12,8 @@ namespace SW_Project
 {
     public partial class mainMenuForm : Form
     {
+
+        Albums albums;
         public mainMenuForm()
         {
             InitializeComponent();
@@ -36,6 +38,17 @@ namespace SW_Project
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void albums_btn_Click(object sender, EventArgs e)
+        {
+            AlbumForm albumForm = new AlbumForm();
+            albumForm.ShowDialog();
+        }
+
+        private void mainMenuForm_Load(object sender, EventArgs e)
+        {
+        
         }
     }
 }

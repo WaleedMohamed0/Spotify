@@ -30,30 +30,30 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.LikedPlaylist_Btn = new System.Windows.Forms.Button();
-            this.LikedSongs_Btn = new System.Windows.Forms.Button();
-            this.LikedAlbums_Btn = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.Playlist_Btn = new System.Windows.Forms.Button();
             this.Library_Btn = new System.Windows.Forms.Button();
             this.Search_Btn = new System.Windows.Forms.Button();
             this.Search_txtBox = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Spotify = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.profile = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.profile);
-            this.panel1.Controls.Add(this.LikedPlaylist_Btn);
-            this.panel1.Controls.Add(this.LikedSongs_Btn);
-            this.panel1.Controls.Add(this.LikedAlbums_Btn);
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.Playlist_Btn);
             this.panel1.Controls.Add(this.Library_Btn);
             this.panel1.Controls.Add(this.Search_Btn);
@@ -65,51 +65,28 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // LikedPlaylist_Btn
+            // button2
             // 
-            this.LikedPlaylist_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LikedPlaylist_Btn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LikedPlaylist_Btn.Location = new System.Drawing.Point(25, 669);
-            this.LikedPlaylist_Btn.Name = "LikedPlaylist_Btn";
-            this.LikedPlaylist_Btn.Size = new System.Drawing.Size(195, 39);
-            this.LikedPlaylist_Btn.TabIndex = 9;
-            this.LikedPlaylist_Btn.Text = "LikedPlaylist";
-            this.LikedPlaylist_Btn.UseVisualStyleBackColor = true;
-            this.LikedPlaylist_Btn.Click += new System.EventHandler(this.LikedPlaylist_Btn_Click);
-            // 
-            // LikedSongs_Btn
-            // 
-            this.LikedSongs_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LikedSongs_Btn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LikedSongs_Btn.Location = new System.Drawing.Point(25, 501);
-            this.LikedSongs_Btn.Name = "LikedSongs_Btn";
-            this.LikedSongs_Btn.Size = new System.Drawing.Size(195, 39);
-            this.LikedSongs_Btn.TabIndex = 8;
-            this.LikedSongs_Btn.Text = "LikedSongs";
-            this.LikedSongs_Btn.UseVisualStyleBackColor = true;
-            this.LikedSongs_Btn.Click += new System.EventHandler(this.LikedSongs_Btn_Click);
-            // 
-            // LikedAlbums_Btn
-            // 
-            this.LikedAlbums_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LikedAlbums_Btn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LikedAlbums_Btn.Location = new System.Drawing.Point(25, 587);
-            this.LikedAlbums_Btn.Name = "LikedAlbums_Btn";
-            this.LikedAlbums_Btn.Size = new System.Drawing.Size(195, 39);
-            this.LikedAlbums_Btn.TabIndex = 7;
-            this.LikedAlbums_Btn.Text = "LikedAlbums";
-            this.LikedAlbums_Btn.UseVisualStyleBackColor = true;
-            this.LikedAlbums_Btn.Click += new System.EventHandler(this.LikedAlbums_Btn_Click);
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(25, 269);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(195, 39);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Profile";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Playlist_Btn
             // 
             this.Playlist_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Playlist_Btn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Playlist_Btn.Location = new System.Drawing.Point(25, 423);
+            this.Playlist_Btn.Location = new System.Drawing.Point(25, 410);
             this.Playlist_Btn.Name = "Playlist_Btn";
             this.Playlist_Btn.Size = new System.Drawing.Size(195, 39);
             this.Playlist_Btn.TabIndex = 6;
-            this.Playlist_Btn.Text = "Playlist";
+            this.Playlist_Btn.Text = "Show Report";
             this.Playlist_Btn.UseVisualStyleBackColor = true;
             this.Playlist_Btn.Click += new System.EventHandler(this.Playlist_Btn_Click);
             // 
@@ -156,24 +133,17 @@
             this.panel4.Size = new System.Drawing.Size(48, 62);
             this.panel4.TabIndex = 3;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.panel2.Location = new System.Drawing.Point(274, 599);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1042, 145);
-            this.panel2.TabIndex = 1;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(404, 144);
+            this.dataGridView1.Location = new System.Drawing.Point(570, 132);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(733, 147);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Spotify
             // 
@@ -200,16 +170,65 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // profile
+            // dataGridView2
             // 
-            this.profile.BackColor = System.Drawing.Color.Lavender;
-            this.profile.Location = new System.Drawing.Point(15, 167);
-            this.profile.Name = "profile";
-            this.profile.Size = new System.Drawing.Size(91, 33);
-            this.profile.TabIndex = 10;
-            this.profile.Text = "profile";
-            this.profile.UseVisualStyleBackColor = false;
-            this.profile.Click += new System.EventHandler(this.profile_Click);
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(570, 314);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(733, 147);
+            this.dataGridView2.TabIndex = 7;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(570, 491);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 51;
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(733, 147);
+            this.dataGridView3.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 40F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label1.Location = new System.Drawing.Point(293, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(201, 76);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Songs";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 40F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label2.Location = new System.Drawing.Point(293, 341);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(254, 76);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Albums";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 40F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label3.Location = new System.Drawing.Point(293, 513);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(226, 76);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Artists";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // HomeForm
             // 
@@ -217,16 +236,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1328, 756);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Spotify);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "HomeForm";
             this.Text = "HomeForm";
+            this.Load += new System.EventHandler(this.HomeForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,18 +261,19 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button Playlist_Btn;
         private System.Windows.Forms.Button Library_Btn;
         private System.Windows.Forms.Button Search_Btn;
         private System.Windows.Forms.TextBox Search_txtBox;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button LikedSongs_Btn;
-        private System.Windows.Forms.Button LikedAlbums_Btn;
-        private System.Windows.Forms.Button LikedPlaylist_Btn;
         private System.Windows.Forms.Label Spotify;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button profile;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Playlist_Btn;
     }
 }

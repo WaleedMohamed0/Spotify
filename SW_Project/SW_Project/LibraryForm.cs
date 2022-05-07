@@ -61,11 +61,23 @@ namespace SW_Project
             libcmd.Parameters.Add("id", libId);
             libcmd.Parameters.Add("songs", OracleDbType.RefCursor, ParameterDirection.Output);
             OracleDataReader dr = libcmd.ExecuteReader();
+            songslist.Items.Add("Songs:");
             while (dr.Read())
-            {
+            { 
                 songslist.Items.Add(dr[1]+"   singer : "+ dr[2]+"  "+dr[3]+"  Album: "+ dr[4]);
             }
-
+            OracleCommand libcmd2 = new OracleCommand();
+            libcmd2.Connection = conn;
+            libcmd2.CommandText = "getalbums";
+            libcmd2.CommandType = CommandType.StoredProcedure;
+            libcmd2.Parameters.Add("id", libId);
+            libcmd2.Parameters.Add("albums", OracleDbType.RefCursor, ParameterDirection.Output);
+            OracleDataReader dr2 = libcmd2.ExecuteReader();
+            songslist.Items.Add("albums:");
+            while (dr2.Read())
+            {
+                songslist.Items.Add(dr2[0] + "   singer : " + dr2[1] + "  " + dr2[2]);
+            }
         }
     }
 }

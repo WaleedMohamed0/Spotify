@@ -31,6 +31,7 @@
             this.Login_Btn = new System.Windows.Forms.Button();
             this.Register_Btn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.albums_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Login_Btn
@@ -75,17 +76,37 @@
             this.label3.Text = "Welcome to Spotify";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // albums_btn
+            // 
+            this.albums_btn.BackColor = System.Drawing.Color.Transparent;
+            this.albums_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.albums_btn.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.albums_btn.FlatAppearance.BorderSize = 200;
+            this.albums_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BlanchedAlmond;
+            this.albums_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.albums_btn.Font = new System.Drawing.Font("Times New Roman", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.albums_btn.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.albums_btn.Location = new System.Drawing.Point(238, 322);
+            this.albums_btn.Name = "albums_btn";
+            this.albums_btn.Size = new System.Drawing.Size(328, 101);
+            this.albums_btn.TabIndex = 8;
+            this.albums_btn.Text = "Albums";
+            this.albums_btn.UseVisualStyleBackColor = false;
+            this.albums_btn.Click += new System.EventHandler(this.albums_btn_Click);
+            // 
             // mainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.albums_btn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Register_Btn);
             this.Controls.Add(this.Login_Btn);
             this.Name = "mainMenuForm";
             this.Text = "mainMenu";
+            this.Load += new System.EventHandler(this.mainMenuForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,5 +117,6 @@
         private System.Windows.Forms.Button Login_Btn;
         private System.Windows.Forms.Button Register_Btn;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button albums_btn;
     }
 }

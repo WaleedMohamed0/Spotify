@@ -1,0 +1,318 @@
+
+
+Drop table SpotifyUser cascade constraints;
+Drop table Subscription cascade constraints;
+Drop table Songs cascade constraints;
+Drop table Album cascade constraints;
+Drop table Artist cascade constraints;
+Drop table playlsit cascade constraints;
+Drop table Playlist_Song cascade constraints;
+Drop table userLibrary cascade constraints;
+Drop table likedSongs cascade constraints;
+Drop table LikedAlbum cascade constraints;
+Drop table Likedplaylist cascade constraints;
+
+set define off;
+
+CREATE TABLE   SpotifyUser(
+      userid     Number NOT NULL  PRIMARY KEY,
+      FirstName   VARCHAR(255) NOT NULL,
+      LastName   VARCHAR(255) NOT NULL,
+      Username   VARCHAR(255) NOT NULL,
+      userPassword   VARCHAR(255) NOT NULL
+);
+CREATE TABLE   Subscription  (
+      sub_id     Number NOT NULL  PRIMARY KEY,
+      userid     Number NOT NULL unique,
+      start_date   DATE NOT NULL,
+      end_date   DATE NOT NULL
+);
+CREATE TABLE   Songs  (
+      song_id     Number NOT NULL    PRIMARY KEY,
+      song_name   VARCHAR(255) NOT NULL,
+      Album_ID     Number NOT NULL,
+      Artist_ID     Number NOT NULL,
+      genre   VARCHAR(255) NOT NULL,
+      lyrics   VARCHAR(4000) NOT NULL,
+      releaseyear   DATE NOT NULL,
+      Downloadlink   VARCHAR(255) NOT NULL
+);
+CREATE TABLE   Album  (
+      Album_id     Number NOT NULL    PRIMARY KEY,
+      Album_name   VARCHAR(255) NOT NULL,
+      Artist_ID     Number NOT NULL
+);
+CREATE TABLE   Artist  (
+      Artist_ID     Number NOT NULL    PRIMARY KEY,
+      FirstName   VARCHAR(255) NOT NULL,
+      LastName   VARCHAR(255) NOT NULL,
+      Gender   VARCHAR(255) NOT NULL,
+      birthdate   DATE NOT NULL
+);
+CREATE TABLE   playlsit  (
+      PLaylist_id     Number NOT NULL    PRIMARY KEY,
+      playlist_name   VARCHAR(255) NOT NULL,
+      userid     Number NOT NULL,
+      create_date   DATE NOT NULL
+);
+CREATE TABLE   Playlist_Song  (
+      song_id     Number NOT NULL,
+      playlist_id     Number NOT NULL
+);
+CREATE TABLE   userLibrary  (
+      Lib_ID     Number NOT NULL    PRIMARY KEY,
+      userid     Number NOT NULL
+);
+CREATE TABLE   likedSongs  (
+      song_id     Number  NOT NULL   ,
+      lib_id     Number NOT NULL
+);
+CREATE TABLE   LikedAlbum  (
+      lib_id     Number  NOT NULL   ,
+      Album_id     Number NOT NULL
+);
+CREATE TABLE   Likedplaylist  (
+      lib_id     Number NOT NULL   ,
+      playlistid     Number NOT NULL
+);
+ALTER TABLE
+      playlsit   ADD   FOREIGN KEY(  userid  ) REFERENCES   SpotifyUser  (  userid  );
+ALTER TABLE
+      Subscription   ADD    FOREIGN KEY(  userid  ) REFERENCES   SpotifyUser  (  userid  );
+ALTER TABLE
+      Songs   ADD    FOREIGN KEY(  Album_ID  ) REFERENCES   Album  (  Album_id  );
+ALTER TABLE
+      Songs   ADD    FOREIGN KEY(  Artist_ID  ) REFERENCES   Artist  (  Artist_ID  );
+ALTER TABLE
+      Album   ADD   FOREIGN KEY(  Artist_ID  ) REFERENCES   Artist  (  Artist_ID  );
+ALTER TABLE
+      Playlist_Song   ADD   FOREIGN KEY(  song_id  ) REFERENCES   Songs  (  song_id  );
+ALTER TABLE
+      Playlist_Song   ADD   FOREIGN KEY(  playlist_id  ) REFERENCES   playlsit  (  PLaylist_id  );
+ALTER TABLE
+      userLibrary   ADD    FOREIGN KEY(  userid  ) REFERENCES   SpotifyUser  (  userid  );
+ALTER TABLE
+      likedSongs   ADD   FOREIGN KEY(  song_id  ) REFERENCES   Songs  (  song_id  );
+ALTER TABLE
+      likedSongs   ADD    FOREIGN KEY( lib_id  ) REFERENCES   USERLIBRARY(LIB_ID);
+ALTER TABLE
+      LikedAlbum   ADD    FOREIGN KEY(  lib_id  ) REFERENCES   USERLIBRARY(LIB_ID);
+ALTER TABLE
+      LikedAlbum   ADD    FOREIGN KEY(  Album_id  ) REFERENCES   Album  (  Album_id  );
+ALTER TABLE
+      Likedplaylist   ADD   FOREIGN KEY(  playlistid  ) REFERENCES   playlsit  (  PLaylist_id  );
+
+insert into spotifyuser values (1,'Mazen','Mohamed','mazenbakr','1234');
+insert into spotifyuser values (2,'Bavly','Maged','bvm','1234');
+insert into spotifyuser values (3,'Mohamed','Ibrahim','Deceptive','1234');
+
+insert into artist values (1,'selena','gomez','f',TO_DATE('22/05/1992', 'DD/MM/YYYY'));
+insert into artist values (2,'Adam','levine','m',TO_DATE('22/05/1985', 'DD/MM/YYYY'));
+insert into artist values (3,'Adele','blue','f',TO_DATE('05/05/1988', 'DD/MM/YYYY'));
+
+INSERT INTO ALBUM  VALUES ('1', 'Revival', '1');
+INSERT INTO ALBUM  VALUES ('2', 'wings of stone', '2');
+INSERT INTO ALBUM  VALUES ('3', 'skyfall', '3');
+
+INSERT INTO userlibrary  VALUES ('1','1');
+INSERT INTO userlibrary  VALUES ('2','2');
+INSERT INTO userlibrary  VALUES ('3','3');
+
+INSERT INTO likedalbum  VALUES ('1','1');
+INSERT INTO likedalbum  VALUES ('1','2');
+INSERT INTO likedalbum  VALUES ('1','3');
+
+INSERT INTO PLAYLSIT VALUES ('1', 'mylist', '1', TO_DATE('12-MAY-2022', 'DD-MON-RR'));
+INSERT INTO PLAYLSIT VALUES ('2', 'mylist2', '1', TO_DATE('12-MAY-2022', 'DD-MON-RR'));
+INSERT INTO PLAYLSIT VALUES ('3', 'mylist3', '1', TO_DATE('12-MAY-2022', 'DD-MON-RR'));
+
+INSERT INTO LIKEDPLAYLIST VALUES ('1', '1');
+INSERT INTO LIKEDPLAYLIST VALUES ('1', '2');
+INSERT INTO LIKEDPLAYLIST VALUES ('1', '3');
+
+INSERT INTO SONGS  VALUES ('1', 'skyfal', '3', '3', 'pop', 'This is the end
+Hold your breath and count to ten
+Feel the Earth move and then
+Hear my heart burst again
+For this is the end
+I ve drowned and dreamt this moment
+So overdue, I owe them
+Swept away, I m stolen
+Let the sky fall
+When it crumbles
+We will stand tall
+Face it all together
+Let the sky fall
+When it crumbles
+We will stand tall
+Face it all together
+At Skyfall
+At Skyfall
+Skyfall is where we start
+A thousand miles and poles apart
+Where worlds collide and days are dark
+You may have my number, you can take my name
+But you ll never have my heart
+Let the sky fall (let the sky fall)
+When it crumbles (when it crumbles)
+We will stand tall (we will stand tall)
+Face it all together
+Let the sky fall (let the sky fall)
+When it crumbles (when it crumbles)
+We will stand tall (we will stand tall)
+Face it all together
+At Skyfall
+Where you go, I go
+What you see, I see
+I know I d never be me
+Without the security
+Of your loving arms
+Keeping me from harm
+Put your hand in my hand
+And we ll stand
+Let the sky fall (let the sky fall)
+When it crumbles (when it crumbles)
+We will stand tall (we will stand tall)
+Face it all together
+Let the sky fall (let the sky fall)
+When it crumbles (when it crumbles)
+We will stand tall (we will stand tall)
+Face it all together
+At Skyfall
+Let the sky fall
+We ll stand tall
+At Skyfall
+Ooh', TO_DATE('22-MAY-2000', 'DD-MON-RR'), 'https://www.youtube.com/watch?v=DeumyOzKqgI&ab_channel=AdeleVEVO');
+
+INSERT INTO SONGS VALUES ('2', 'More', '1', '1', 'pop', 'I want more
+I want more
+Yeah yeah yeah yeah
+I want more
+Yeah
+Friday night and we re just talking
+Stars are crashing in the sky
+Burning just for you and I
+We don t need to over think this
+Nothing is going to bring us down
+Show them what we re all about
+All the way, one hundred one percent touch down
+We re gonna kill it, lead the pack on
+Take this town
+Let s go, whatchya wanna wait for?
+Let s take everything we ask for
+Come on and turn it up
+Let s tell the world we want
+More
+More
+More
+I want more
+Let s go, take over the dance floor
+You d be mine and I will be yours
+Come on and let it play
+Let me hear you say
+More
+More
+More
+I want more
+I want more
+Take my hand and pull me closer
+Whisper nothings in my ear
+Until the walls just disappear
+Feel the music
+Take you higher
+Feel my heart beat like a drum
+Baby you re the only one
+All the way, one hundred one percent touch down
+We re gonna kill it, lead the pack on
+Take this town
+Let s go, whatchya wanna wait for?
+Let s take everything we ask for
+Come on and turn it up
+Let s tell the world we want
+More
+More
+More
+I want more
+Let s go, take over the dance floor
+You d be mine and I will be yours
+Come on and let it play
+Let me hear you say
+More
+More
+More
+I want more
+Come on everybody, lets go party
+Till  they kick us out now
+I don t care
+(I want more)
+Once get it started, we won t stop
+Until we get it all out
+Take me there
+Take me there
+More
+More
+I want more
+Let s go, whatchya wanna wait for?
+Let s take everything we ask for
+Come on and turn it up
+Let s tell the world we want
+More
+More
+More
+I want more
+Let s go, take over the dance floor
+You d be mine and I will be yours
+Come on and let it play
+Let me hear you say
+More
+More
+More
+I want more
+More
+I want more
+More more', TO_DATE('12-MAY-2005', 'DD-MON-RR'), 'https://www.youtube.com/watch?v=sP2R9W0vwbY&ab_channel=StarlightLyrics');
+
+INSERT INTO SONGS  VALUES ('3', 'hello', '3', '3', 'pop', 'hello', TO_DATE('12-MAY-2004', 'DD-MON-RR'), 'not available');
+INSERT INTO SONGS  VALUES ('4', 'Life style', '3', '3', 'pop','life style', TO_DATE('12-MAY-2005', 'DD-MON-RR'), 'not available');
+
+
+insert into likedsongs values('1','1');
+insert into likedsongs values('2','1');
+insert into likedsongs values('3','1');
+
+
+insert into playlist_song values('1','1');
+insert into playlist_song values('2','1');
+insert into playlist_song values('3','1');
+
+INSERT INTO SUBSCRIPTION  VALUES ('1', '1', TO_DATE('20-MAY-2010', 'DD-MON-RR'), TO_DATE('20-MAY-20', 'DD-MON-RR'));
+INSERT INTO SUBSCRIPTION  VALUES ('2', '2', TO_DATE('20-MAY-2010', 'DD-MON-RR'), TO_DATE('20-MAY-20', 'DD-MON-RR'));
+INSERT INTO SUBSCRIPTION  VALUES ('3', '3', TO_DATE('20-MAY-2010', 'DD-MON-RR'), TO_DATE('20-MAY-20', 'DD-MON-RR'));
+
+
+
+create or replace PROCEDURE getalbums(libnumber in number,songcursor out sys_refcursor)
+as
+begin
+open songcursor for
+select album.album_name,artist.firstname,artist.lastname  FROM likedalbum,artist,album where  likedalbum.LIB_ID= libnumber 
+and artist.artist_id=album.artist_id and album.album_id=likedalbum.album_id;
+end;
+/
+create or replace PROCEDURE getLib ( usernumber in  number, libId  out number)
+as
+begin
+select lib_id into libId from userlibrary
+where  userid= usernumber;
+END ;
+/
+create or replace PROCEDURE getsongs(libnumber in number,songcursor out sys_refcursor)
+as
+begin
+open songcursor for
+select songs.song_id,songs.song_name,artist.firstname,artist.lastname,album.album_name FROM songs, likedsongs,artist,album where  likedsongs.LIB_ID= libnumber 
+and artist.artist_id=songs.artist_id and album.album_id=songs.album_id;
+end;
+/
+commit;
+
