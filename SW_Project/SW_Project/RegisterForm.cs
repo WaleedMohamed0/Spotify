@@ -43,19 +43,31 @@ namespace SW_Project
             usercmd.Parameters.Add("LastName",  LastName_txtBox.Text);
             usercmd.Parameters.Add("UserName",  userName_txtBox.Text);
             usercmd.Parameters.Add("Password",  password_txtBox.Text);
-            int r = usercmd.ExecuteNonQuery();
-            if (r != -1)
+            try
             {
-                libcmd.CommandText = "select max(lib_id) from userlibrary";
-                int libmax = Convert.ToInt32(libcmd.ExecuteScalar()) + 1;
-                libcmd.CommandText = "insert into  userlibrary values (:id , :uesrid)";
-                libcmd.Parameters.Add("id", libmax);
-                libcmd.Parameters.Add("userid", maxId);
-                libcmd.ExecuteNonQuery();
-                MessageBox.Show("Registeration Succeeded");
+                int r = usercmd.ExecuteNonQuery();
+                if (r != -1)
+                {
+                    libcmd.CommandText = "select max(lib_id) from userlibrary";
+                    int libmax = Convert.ToInt32(libcmd.ExecuteScalar()) + 1;
+                    libcmd.CommandText = "insert into  userlibrary values (:id , :uesrid)";
+                    libcmd.Parameters.Add("id", libmax);
+                    libcmd.Parameters.Add("userid", maxId);
+                    libcmd.ExecuteNonQuery();
+                    MessageBox.Show("Registeration Succeeded");
+                }
+                else
+                    MessageBox.Show("Registeration Failed");
+
+                LoginForm loginForm = new LoginForm();
+                this.Hide();
+                loginForm.ShowDialog();
+                this.Close();
             }
-            else
-                MessageBox.Show("Registeration Failed");
+            catch
+            {
+                MessageBox.Show("Enter missing data");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

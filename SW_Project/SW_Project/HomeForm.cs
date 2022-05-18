@@ -34,6 +34,9 @@ namespace SW_Project
             OracleCommand songs = new OracleCommand();
             OracleCommand artists = new OracleCommand();
             OracleCommand albums = new OracleCommand();
+            dataGridView1.DataSource = null;
+            dataGridView2.DataSource = null;
+            dataGridView3.DataSource = null;
             songs.Connection = conn;
             albums.Connection = conn;
             artists.Connection = conn;
@@ -64,7 +67,7 @@ namespace SW_Project
             {
                 DataTable dt = new DataTable();
                 dt.Load(artists.ExecuteReader());
-                dataGridView2.DataSource = dt;
+                dataGridView3.DataSource = dt;
             }
         }
         private void LikedSongs_Btn_Click(object sender, EventArgs e)

@@ -44,7 +44,6 @@ namespace SW_Project
 
        private void profileGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            button1.Visible = true;
         }
 
 
